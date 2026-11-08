@@ -1,0 +1,25 @@
+---
+layout: base.njk
+title: Utbildning inom modern systemutveckling
+description: ArtComputer är Per Lundholms IT-företag. Här hittar du kurser inom modern systemutveckling, CV och kontaktuppgifter.
+---
+<section class="hero" aria-labelledby="intro">
+  <p class="eyebrow">Utbildning · IT · Systemutveckling</p>
+  <h1 id="intro">Kurser inom modern <br>systemutveckling.</h1>
+  <p class="lead">ArtComputer erbjuder kurser inom modern systemutveckling med utgångspunkt i lång erfarenhet av praktiskt utvecklingsarbete.</p>
+  <a class="text-link" href="#kurser">Se kurserna <span aria-hidden="true">↓</span></a>
+</section>
+<section class="catalogue section-rule" id="kurser" aria-labelledby="course-heading">
+  <div class="section-heading"><div><p class="eyebrow">Kurskatalog</p><h2 id="course-heading">Kurser</h2></div></div>
+  <div class="course-list">
+  {% for course in collections.courses %}
+    <article class="course-row">
+      <div><p class="eyebrow">{{ course.data.category }}</p><h3><a href="{{ course.url }}">{{ course.data.title }}<span aria-hidden="true"> ↗</span></a></h3></div>
+      <div><p>{{ course.data.summary }}</p><a class="text-link" href="{{ course.url }}">Läs om kursen <span aria-hidden="true">→</span></a></div>
+    </article>
+  {% endfor %}
+  </div>
+</section>
+<section class="about section-rule" aria-labelledby="about-heading">
+  <div><h2 id="about-heading">Om ArtComputer</h2><p>ArtComputer drivs av Per Lundholm, som har arbetat med systemutveckling sedan 1980. Arbetet omfattar programvaruhantverk, arkitektur och samarbete i team.</p><a class="text-link" href="/cv/">Per Lundholms bakgrund <span aria-hidden="true">→</span></a></div>
+</section>

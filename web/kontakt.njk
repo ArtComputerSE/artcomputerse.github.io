@@ -1,0 +1,12 @@
+---
+layout: base.njk
+title: Kontakt
+description: Kontaktuppgifter till Per Lundholm på ArtComputer.
+section: contact
+permalink: /kontakt/index.html
+---
+<div class="page-top"><p class="eyebrow">ArtComputer</p><h1>Kontakt</h1><p class="lead">Har du en fråga om en kurs eller vill du prata om utbildning inom modern systemutveckling? Hör av dig.</p></div>
+<section class="contact-details section-rule" aria-labelledby="contact-name">
+  <h2 id="contact-name">Per Lundholm</h2>
+  <dl>{% if site.email %}<div><dt>E-post</dt><dd><a href="mailto:{{ site.email }}">{{ site.email }}</a></dd></div>{% endif %}<div><dt>Telefon</dt><dd><a href="tel:{{ site.phoneLink }}">{{ site.phone }}</a></dd></div><div><dt>LinkedIn</dt><dd><a href="{{ site.linkedin }}">Per Lundholm på LinkedIn ↗</a></dd></div></dl>
+</section>

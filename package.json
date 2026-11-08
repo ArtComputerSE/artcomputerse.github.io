@@ -1,0 +1,11 @@
+{
+  "name": "artcomputer-webbplats",
+  "private": true,
+  "scripts": {
+    "dev": "eleventy --serve --port=8080",
+    "build": "node scripts/build.mjs",
+    "check:build": "node scripts/check-build.mjs"
+  },
+  "devDependencies": { "@11ty/eleventy": "3.1.8" },
+  "engines": { "node": ">=20" }
+}

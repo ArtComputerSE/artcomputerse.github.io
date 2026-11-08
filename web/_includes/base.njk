@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} · ArtComputer</title>
+  <meta name="description" content="{{ description }}">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#c5161d">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#innehall">Hoppa till innehållet</a>
+  <header class="site-header wrap">
+    <a class="wordmark" href="/" aria-label="ArtComputer, startsida"><img src="/image/logotype.png" alt="ArtComputer.se" width="744" height="104"></a>
+    <nav aria-label="Huvudnavigation">
+      <a href="/#kurser"{% if section == 'courses' %} aria-current="page"{% endif %}>Kurser</a>
+      <a href="/cv/"{% if section == 'cv' %} aria-current="page"{% endif %}>CV</a>
+      <a href="/kontakt/"{% if section == 'contact' %} aria-current="page"{% endif %}>Kontakt</a>
+    </nav>
+  </header>
+  <main id="innehall" class="wrap" tabindex="-1">{{ content | safe }}</main>
+  <footer class="site-footer wrap">
+    <p>ArtComputer <span>·</span> Per Lundholm</p>
+    <a href="/kontakt/">Kontakt</a>
+  </footer>
+</body>
+</html>

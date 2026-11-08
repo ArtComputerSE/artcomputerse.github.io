@@ -1,0 +1,5 @@
+{
+  "layout": "course.njk",
+  "tags": "course",
+  "permalink": "/kurser/{{ page.fileSlug }}/index.html"
+}

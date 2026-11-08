@@ -1,0 +1,373 @@
+:root {
+  --paper: #ffffff;
+  --ink: #151515;
+  --muted: #555555;
+  --line: #dedede;
+  --accent: #c5161d;
+  --wash: #f7f7f7;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.7;
+}
+a {
+  color: var(--accent);
+  text-underline-offset: 0.25em;
+}
+a:hover {
+  text-decoration-thickness: 2px;
+}
+a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 6px;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.wrap {
+  width: min(1120px, calc(100% - 96px));
+  margin-inline: auto;
+}
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding-block: 22px;
+  border-bottom: 1px solid var(--line);
+}
+.wordmark {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.wordmark img {
+  display: block;
+  width: 300px;
+  height: auto;
+}
+nav {
+  display: flex;
+  gap: 32px;
+}
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 15px;
+}
+nav a:hover,
+nav a[aria-current] {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--accent);
+}
+.hero {
+  padding: 44px 0 36px;
+}
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 11px;
+  font-weight: 650;
+  color: var(--muted);
+  margin: 0 0 22px;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  line-height: 1.13;
+  margin: 0 0 24px;
+  letter-spacing: -0.035em;
+}
+h1 {
+  overflow-wrap: anywhere;
+  font-size: clamp(40px, 5.4vw, 64px);
+  max-width: 900px;
+}
+h2 {
+  font-size: 36px;
+}
+h3 {
+  font-size: 29px;
+}
+.lead {
+  font-size: 20px;
+  line-height: 1.7;
+  max-width: 670px;
+  color: var(--muted);
+  margin: 20px 0;
+}
+.text-link {
+  font-size: 15px;
+  font-weight: 550;
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 5px;
+}
+.text-link span {
+  margin-left: 16px;
+}
+.section-rule {
+  border-top: 1px solid var(--line);
+}
+.catalogue {
+  padding-block: 28px 36px;
+}
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 22px;
+}
+.section-heading h2 {
+  margin: 0;
+}
+.section-heading p:last-child {
+  color: var(--muted);
+  font-size: 15px;
+}
+.section-heading .eyebrow {
+  margin-bottom: 12px;
+}
+.course-row {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 45px;
+  padding: 26px;
+  background: var(--wash);
+  border-left: 3px solid var(--accent);
+}
+.course-row .eyebrow {
+  margin-bottom: 16px;
+}
+.course-row h3 a {
+  text-decoration: none;
+  color: var(--ink);
+}
+.course-row h3 a:hover {
+  text-decoration: underline;
+}
+.course-row h3 span {
+  font-size: 22px;
+  color: var(--accent);
+}
+.course-row p {
+  margin-top: 0;
+  color: var(--muted);
+}
+.about {
+  padding-block: 32px 40px;
+}
+.about > div {
+  max-width: 710px;
+}
+.about p {
+  margin-top: 0;
+}
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid var(--line);
+  padding-block: 25px 35px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.site-footer p {
+  margin: 0;
+}
+.site-footer span {
+  margin: 0 8px;
+}
+.site-footer a {
+  color: var(--muted);
+}
+.page-top {
+  padding: 44px 0 32px;
+}
+.page-top .eyebrow {
+  margin-top: 30px;
+}
+.back-link {
+  font-size: 14px;
+  text-decoration: none;
+}
+.detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 680px) minmax(0, 280px);
+  gap: 50px;
+  padding-bottom: 50px;
+}
+.prose h2 {
+  font-size: 29px;
+  margin-top: 40px;
+}
+.prose h2:first-child {
+  margin-top: 0;
+}
+.prose h3 {
+  font-size: 23px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.prose p {
+  margin: 0 0 24px;
+}
+.prose ul {
+  padding-left: 23px;
+  margin-bottom: 30px;
+}
+.prose li {
+  padding-left: 5px;
+  margin-bottom: 10px;
+}
+.course-contact {
+  border-top: 2px solid var(--accent);
+  padding: 24px 0;
+  align-self: start;
+}
+.course-contact .eyebrow {
+  margin-bottom: 20px;
+}
+.course-contact h2 {
+  font-size: 25px;
+}
+.course-contact p {
+  font-size: 15px;
+  color: var(--muted);
+}
+.course-contact a {
+  overflow-wrap: anywhere;
+  font-size: 14px;
+}
+.cv-prose {
+  max-width: 710px;
+  padding-bottom: 70px;
+}
+.contact-details {
+  max-width: 760px;
+  padding-block: 28px 50px;
+}
+.contact-details h2 {
+  font-size: 29px;
+}
+dl {
+  margin: 30px 0;
+}
+dl div {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 20px;
+  padding-block: 16px;
+  border-bottom: 1px solid var(--line);
+}
+dt {
+  color: var(--muted);
+  font-size: 14px;
+}
+dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.skip-link {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  transform: translateY(-150%);
+  background: var(--ink);
+  color: white;
+  padding: 10px;
+  z-index: 10;
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+@media (max-width: 700px) {
+  h1 {
+    font-size: clamp(32px, 9.5vw, 44px);
+  }
+  .wrap {
+    width: calc(100% - 40px);
+  }
+  .site-header {
+    padding-block: 22px;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  .wordmark img {
+    width: min(260px, 100%);
+  }
+  nav {
+    gap: 22px;
+  }
+  .hero {
+    padding: 32px 0;
+  }
+  .hero h1 br {
+    display: none;
+  }
+  .lead {
+    font-size: 18px;
+  }
+  .section-heading {
+    display: block;
+  }
+  .section-heading p:last-child {
+    margin-bottom: 0;
+  }
+  .course-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 25px;
+  }
+  .course-row h3 {
+    margin-bottom: 10px;
+  }
+  .about {
+    padding-block: 28px 32px;
+  }
+  .site-footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .page-top {
+    padding: 40px 0;
+  }
+  .detail-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding-bottom: 50px;
+  }
+  .course-contact {
+    max-width: 400px;
+  }
+  h2 {
+    font-size: 31px;
+  }
+  dl div {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
