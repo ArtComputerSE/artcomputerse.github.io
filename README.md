@@ -77,27 +77,35 @@ Eleventy räcker för katalogen och har en enda direkt utvecklingsdependency.
 Referenser: [Eleventy](https://www.11ty.dev/),
 [Astros sidmodell](https://docs.astro.build/en/basics/astro-pages/).
 
-## GitHub Pages – senare publicering
+## GitHub Pages – publicering
 
-Ingen publicering har utförts i samband med ombyggnaden. Arbetet ligger på
-`redesign`. `CNAME` är fortsatt `artcomputer.se` och kopieras till bygget.
-Nuvarande Pages-inställning på GitHub har inte kunnat verifieras.
+Webbplatsen finns på [https://artcomputer.se](https://artcomputer.se).
+Den nya versionen publicerades den 8 november 2026 från commit `2890ca6`,
+efter att `redesign` slagits samman med `master`. GitHub Pages använder
+**GitHub Actions** som publiceringskälla.
 
-När versionen är granskad och ska publiceras:
+För att publicera kommande ändringar:
 
-1. Välj **GitHub Actions** som källa under repositoryts **Settings → Pages**
-   innan någon push till `master`, så att gammal branchpublicering inte startar.
-   Behåll den anpassade domänen `artcomputer.se` och befintlig DNS.
-2. För in den godkända versionen i `master` och pusha den.
-3. Kör **Publicera GitHub Pages manuellt** från `master` under **Actions**.
+1. Granska ändringarna och kör `npm run build` samt `npm run check:build`.
+2. Committa ändringarna, för in dem i `master` och pusha till GitHub.
+3. Under **Actions**, välj **Publicera GitHub Pages manuellt**, klicka på
+   **Run workflow** och välj `master`.
+4. Kontrollera att både bygg- och publiceringsjobbet lyckas och granska
+   webbplatsen, inklusive kursbeskrivningens PDF och kontaktuppgifterna.
 
-Workflow-filen körs endast manuellt och avvisar andra brancher än `master`.
-Den bygger `_site/` och publicerar det som ett Pages-artifact. Ingen push
-utlöser workflow-filen. Byggfiler behöver inte committas. Kontrollera domän
-och HTTPS under Pages vid den framtida övergången.
-CNAME finns med i bygget men styr inte domänen när GitHub Actions används;
-domänen måste finnas i GitHubs Pages-inställning.
-Se `PUBLICERING.md` för granskningsresultat och den förberedda övergången.
+Workflowen finns i `.github/workflows/pages.yml`. Den körs endast manuellt
+och avvisar andra brancher än `master`. Den installerar paket från låsfilen,
+bygger och kontrollerar `_site/` och publicerar sedan innehållet.
+En push startar ingen publicering. Byggfiler behöver inte committas.
 
-Den äldre Elm-klockan ingår inte i publiceringsbygget. Källfilerna ligger i
-`old/` som historiskt material.
+`CNAME` innehåller `artcomputer.se` och kopieras till bygget. Domänen är även
+angiven under **Settings → Pages → Custom domain**; den inställningen styr
+domänen när GitHub Actions används. DNS går via Cloudflare.
+
+Vid den första publiceringen fungerade HTTPS, men GitHub nollställde
+**Enforce HTTPS** vid bytet av publiceringskälla och kunde inte återaktivera
+det eftersom ett GitHub-certifikat saknades. Omdirigeringen från HTTP till
+HTTPS återstod därför att slutföra i GitHub Pages eller Cloudflare.
+
+`PUBLICERING.md` innehåller granskningsunderlaget inför den första publiceringen.
+Äldre sidor, verktyg och Elm-källkod finns i `old/` och publiceras inte.
