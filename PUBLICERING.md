@@ -1,5 +1,11 @@
 # Förberedd publicering av ArtComputer
 
+Detta dokument är historiskt granskningsunderlag inför den första publiceringen.
+Webbplatsen är nu publicerad. Workflowen heter **Publicera GitHub Pages** och
+startar automatiskt vid push till `master`, eller manuellt via `workflow_dispatch`.
+Se README för aktuella publiceringsinstruktioner. Beskrivningen av manuell
+publicering nedan avser den ursprungliga övergången.
+
 Ingen sammanslagning, push, inställningsändring eller publicering har
 utförts. Förberedelserna hör till `redesign`.
 

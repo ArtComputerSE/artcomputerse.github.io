@@ -1,5 +1,7 @@
-name: Publicera GitHub Pages manuellt
+name: Publicera GitHub Pages
 on:
+  push:
+    branches: [master]
   workflow_dispatch:
 permissions:
   contents: read

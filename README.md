@@ -88,15 +88,15 @@ För att publicera kommande ändringar:
 
 1. Granska ändringarna och kör `npm run build` samt `npm run check:build`.
 2. Committa ändringarna, för in dem i `master` och pusha till GitHub.
-3. Under **Actions**, välj **Publicera GitHub Pages manuellt**, klicka på
-   **Run workflow** och välj `master`.
+3. En push till `master` startar automatiskt **Publicera GitHub Pages** under
+   **Actions**. Vid behov kan den även startas med **Run workflow** från `master`.
 4. Kontrollera att både bygg- och publiceringsjobbet lyckas och granska
    webbplatsen, inklusive kursbeskrivningens PDF och kontaktuppgifterna.
 
-Workflowen finns i `.github/workflows/pages.yml`. Den körs endast manuellt
-och avvisar andra brancher än `master`. Den installerar paket från låsfilen,
+Workflowen finns i `.github/workflows/pages.yml`. Den körs vid push till `master`
+eller vid manuell start och avvisar andra brancher än `master`. Den installerar paket från låsfilen,
 bygger och kontrollerar `_site/` och publicerar sedan innehållet.
-En push startar ingen publicering. Byggfiler behöver inte committas.
+Om bygget eller kontrollerna misslyckas stoppas publiceringen. Byggfiler behöver inte committas.
 
 `CNAME` innehåller `artcomputer.se` och kopieras till bygget. Domänen är även
 angiven under **Settings → Pages → Custom domain**; den inställningen styr
